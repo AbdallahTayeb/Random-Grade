@@ -1,22 +1,18 @@
 pipeline {
-    agent {
-        dockerContainer {
-            image 'python:3.8-slim'
-}
-    }
+    agent any
 
     stages {
         stage('Check Python Version') {
             steps {
-                echo 'Vérification de la version de Python...'
-                sh 'python --version'
+                echo 'Checking Python version...'
+                sh 'python --version || python3 --version'
             }
         }
 
-        stage('Execute Python Script') {
+        stage('Run Python Script') {
             steps {
-                echo 'Exécution du script random_grade.py...'
-                sh 'python random_grade.py'
+                echo 'Running app.py...'
+                sh 'python app.py || python3 app.py'
             }
         }
     }
