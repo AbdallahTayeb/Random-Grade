@@ -1,18 +1,9 @@
 pipeline {
-    agent python
-
+    agent { docker { image 'python:3.12.0-alpine3.18' } }
     stages {
-        stage('Check Python Version') {
+        stage('build') {
             steps {
-                echo 'Checking Python version...'
-                sh 'python --version || python3 --version'
-            }
-        }
-
-        stage('Run Python Script') {
-            steps {
-                echo 'Running app.py...'
-                sh 'python random_grade.py || python3 random_grade.py'
+                sh 'python --version'
             }
         }
     }
