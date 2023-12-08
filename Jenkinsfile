@@ -12,7 +12,7 @@ pipeline {
         stage('Run Python Script') {
             steps {
                 echo 'Running app.py...'
-                sh 'python app.py || python3 app.py'
+                sh 'python random_grade.py || python3 random_grade.py'
             }
         }
     }
