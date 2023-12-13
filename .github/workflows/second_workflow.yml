@@ -26,9 +26,7 @@ jobs:
 
     - name: Run Unit Tests
       run: |
-        # Remplacer par la commande de votre framework de test
-        # Exemple avec pytest
-        pytest
+        python -m unittest
 
     - name: Lint with Flake8
       run: |
